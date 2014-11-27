@@ -3,7 +3,8 @@ require 'json'
 
 class HelloRack
   def call(env)
-    if(env["PATH_INFO"] == "/tw")
+    req =  Rack::Request.new(env)
+    if(req.path == "/tw")
       ['200', {'Content-Type' => 'application/json'}, ['hello twers!']]
     else
       ['200', {'Content-Type' => 'application/json'}, [env.to_json]]
