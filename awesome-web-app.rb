@@ -9,6 +9,8 @@ class HelloRack
     else
       if(req.path == "/tw")
         ['200', {'Content-Type' => 'application/json'}, ["hello #{req.params["name"]}!"]]
+      elsif(req.path == '/file')
+        ['200', {'Content-Type' => 'application/json'}, [File.read('public/file')]]
       else
         ['200', {'Content-Type' => 'application/json'}, [env.to_json]]
       end
