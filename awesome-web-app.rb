@@ -17,5 +17,3 @@ class HelloRack
     end
   end
 end
-
-Rack::Handler::WEBrick.run HelloRack.new, :Port => 9898
