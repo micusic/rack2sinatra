@@ -1,1 +1,2 @@
 gem 'rack'
+gem 'sinatra'
