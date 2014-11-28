@@ -1,7 +1,7 @@
 require 'sinatra'
 
 get '/tw' do
-  'Hello TWer!'
+  "Hello " + params[:name] || "TWer"
 end
 
 get '/*' do
