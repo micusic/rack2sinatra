@@ -2,7 +2,7 @@ require 'sinatra'
 require 'json'
 
 get '/tw' do
-  "Hello " + params[:name] || "TWer"
+  "Hello " + (params[:name] || "TWer")
 end
 
 post '/tw' do
@@ -10,5 +10,6 @@ post '/tw' do
 end
 
 get '/*' do
+  content_type :json
   request.env.to_json
 end
